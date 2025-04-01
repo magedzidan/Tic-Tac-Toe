@@ -1,6 +1,6 @@
 import Player from "./components/player"
+import { useState } from "react"
 function App() {
-  
 
   return (
     <main >

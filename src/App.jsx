@@ -1,5 +1,5 @@
 import Player from "./components/player"
-import { useState } from "react"
+import { GameBoard } from "./components/game_board"
 function App() {
 
   return (
@@ -9,7 +9,7 @@ function App() {
           <Player name='player 1' symbol='X'></Player>
           <Player name='player 2' symbol='O'></Player>
         </ol>
-        Game Board
+        <GameBoard/>
       </div>
     </main>
   )

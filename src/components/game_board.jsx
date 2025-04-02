@@ -6,15 +6,17 @@ const initialGameBoard = [
     [null, null, null],
 ];
 
-export function GameBoard() {
+export function GameBoard({ onSelect, activePlayerSymbol }) {
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
     
     function handleChange(rowIndex, colIndex) {
         setGameBoard((previousBoard) => {
             const updatedBoard = [...previousBoard.map(innerBoard => [...innerBoard])];
-            updatedBoard[rowIndex][colIndex] = 'X';
+            updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
             return updatedBoard;
         });
+
+        onSelect();
     }
 
     return (
@@ -24,7 +26,10 @@ export function GameBoard() {
                     <ol>
                         {row.map((playerSymbol, colIndex) => (
                             <li key={colIndex}>
-                                <button onClick={() => handleChange(rowIndex, colIndex)}>
+                                <button 
+                                    onClick={() => handleChange(rowIndex, colIndex)}
+                                    disabled={playerSymbol !== null}
+                                >
                                     {playerSymbol}
                                 </button>
                             </li>

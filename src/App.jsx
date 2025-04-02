@@ -27,7 +27,7 @@ function App() {
           onCoordinatesUpdate={handleCoordinatesUpdate}
         />
       </div>
-      <Log coordinates={coordinates} />
+      <Log coordinates={coordinates}/>
     </main>
   )
 }

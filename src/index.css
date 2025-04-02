@@ -158,38 +158,34 @@ ol {
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
 }
-
-#game-board {
+.game-board {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 3rem 0;
-  padding: 0;
   flex-direction: column;
+  gap: 1.9rem;
+
 }
 
-#game-board ol {
+.row {
   display: flex;
-  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+
 }
 
-#game-board button {
-  width: 8rem;
-  height: 8rem;
-  border: none;
-  background: #aca788;
-  color: #3f3b00;
+.cell {
+  width: 12rem;
+  height: 9rem;
+  border: 2px solid #333;
   font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
-  padding: 1rem;
 }
 
+.cell:disabled {
+  cursor: not-allowed;
+}
 #game-over {
   position: absolute;
   top: 0;
@@ -203,7 +199,13 @@ ol {
   background-color: rgba(40, 38, 23, 0.95);
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
-
+.winner-message {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2c974b;
+}
 #game-over h2 {
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
